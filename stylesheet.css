@@ -1,0 +1,12 @@
+.card-title{
+    text-align: center;
+}
+
+.col-sm-5{
+    margin-top: 50px;
+    align-items: center;
+}
+
+.flex-column{
+    background-color: black;
+}
