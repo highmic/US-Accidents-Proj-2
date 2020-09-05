@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+
+.navbar-dark{
+    background-color: rgba(0, 0, 0, 0.658);
+}
+
+>>>>>>> aaron_branch
 .card-title{
     text-align: center;
 }
@@ -9,4 +17,39 @@
 
 .flex-column{
     background-color: black;
+<<<<<<< HEAD
 }
+=======
+}
+
+#sidebarMenu{
+    background-color:rgba(128, 128, 128, 0.363);
+ 
+}
+
+#sidebarMenu{
+    padding-bottom: 1000px;
+    padding-right: 10px;
+    padding-top: 50px;
+    font-size: 20px;
+}
+
+.navbar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+}
+
+.navbar-brand{
+    font-size: 30px;
+}
+
+#dashTitle{
+    font-size: 50px;
+    text-align: center;
+
+}
+
+
+
+>>>>>>> aaron_branch
