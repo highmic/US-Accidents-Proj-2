@@ -9,10 +9,7 @@
 
 #sidebarMenu{
     background-color:#4D4D4D;
-    padding-bottom: 1000px;
-    padding-right: 10px;
-    padding-top: 50px;
-    font-size: 30px;
+    font-size: 15px;
     box-sizing: border-box;
     list-style-type: none;
     text-size-adjust: 100%;
@@ -25,14 +22,8 @@
 }
 
 #sideLinks{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-#sideLinks1{
-
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .nav-item{
@@ -53,7 +44,7 @@ a:hover{
 }
 
 .navbar-brand{
-    font-size: 30px;
+    font-size: 35px;
 }
 
 #dashTitle{
