@@ -92,7 +92,7 @@ const data = '/api/allaccidents'
 // Grab the data with d3
 d3.json(data).then( function(response) {
 
-  console.log(response);
+  // console.log(response);
 
   const cityLat = response.map(feature => {
     if (feature.Time) {

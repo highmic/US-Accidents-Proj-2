@@ -8,7 +8,7 @@ const tableData = "/api/allaccidents";
 d3.json(tableData).then( function(response) {
 
     // console log
-    console.log(response);
+    // console.log(response);
 
     // tbody variable
     let tbody = d3.select("#accident-table>tbody");
