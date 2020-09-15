@@ -18,7 +18,10 @@
     <body>
 
       <!-- connect to js -->
-      <script src="static/bubble_app.js"></script>
+      <script src="https://d3js.org/d3.v6.min.js"></script>
+
+      <!-- connect to plotly -->
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
        <!-- Navigation -->
        <nav class="navbar navbar-expand-lg navbar-dark">
@@ -73,29 +76,24 @@
                 <div class="col-lg-12 ml-sm-auto">Dashboard</div>    
               </div> 
 
-              <!-- Container for Leaflet -->
+              <!-- Container for bubble chart -->
               <div class="container">
                 <div class="row">
-                  <div class="col-lg-12" id='leafMap'>
-                    <img class="mw-100" src="1_SnzxlADjKy_jrx967N2Isw.png">
+                  <div class="col-lg-12" id='bubbleChart'>
+                    
                   </div>    
                 </div> 
   
               </div>
   
-              <!-- Landing page chart -->
-              <div class="container">
-                <div class="row">
-                  <div class= "col-lg-12">
-                  <img class="mw-100" src="1_SnzxlADjKy_jrx967N2Isw.png">
-                </div>
-              </div>
 
-    
-      
                 </div>
             </div>
         </div> 
+
+      <!-- connect to js -->
+    <script src="static/js/bubble_app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
         
 
     
