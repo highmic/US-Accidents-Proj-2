@@ -105,20 +105,6 @@ d3.json(data).then( function(response) {
   // Loop through data
   response.forEach(feature => {
 
-    // const dateArray1 = feature.Time.$date.split('T');
-    // let newDate1 = new Date(dateArray1);
-    // let timeArray = dateArray1[1];
-    // const removeZ = timeArray.split('Z');
-    // // let dateValue = dateArray1[0];
-    // let time = removeZ[0];
-    // const date = newDate1.toDateString();
-    // const utcHour = newDate1.getUTCHours();
-    // const utcMin = newDate1.getUTCMinutes();
-    // const utcSec = newDate1.getUTCSeconds();
-    // const utcTime = `${utcHour}:${utcMin}:${utcSec} Coordinated Universal Time (UTC)`;
-    // const getTime = newDate1.getTime();
-    // console.log(typeof newDate1);
-
     function getColor(sev){
       // minor
       if (sev ===1){
@@ -158,7 +144,7 @@ d3.json(data).then( function(response) {
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(L.marker([feature.Latitude, feature.Longitude], {icon: accidentIcon})
         .bindPopup(`<h1>${feature.City}, ${feature.State}</h1> <hr>
-                    <h2>${feature.Time}</h2> <h4>
+                    <h4>${feature.Time}</h4>
                     <h3>Weather Condition: ${feature.Weather_Condition}</h3> <hr>
                     <h3>Temperature(F): ${feature.Temperature}°</h3> <hr>
                     
@@ -188,14 +174,14 @@ d3.json(data).then( function(response) {
   
 });
 
-function userDate (date) {
-  const dateArray1 = feature.Time.$date.split('T');
-  let dateValue = dateArray1[0];
-  if (dateValue === '2020-05-24') {
+// function userDate (date) {
+//   const dateArray1 = feature.Time.$date.split('T');
+//   let dateValue = dateArray1[0];
+//   if (dateValue === '2020-05-24') {
     
-  }
+//   }
 
-};
+// };
 
 // const myStyle = {
 //   "color": "blue",
