@@ -18,8 +18,11 @@ d3.json(tableData).then( function(response) {
         // console.log(accidentData);
         // Display key and value
         let dateArray = accidentData.Time.split(' ');
-        let newDate = dateArray[0];
-        if (newDate === '2020-06-24') {
+        let day = dateArray[1];
+        let month = dateArray[2];
+        let year = dateArray[3];
+        let newDate = `${day}  ${month}  ${year}`;
+        if (newDate === '01 Jun 2020') {
             Object.entries(accidentData).forEach( ([key,value]) => {
                 // console.log(`ID ${i}, Key: ${key}, Value: ${value}`);
                 // Append data into accident-table
@@ -52,7 +55,10 @@ d3.json(tableData).then( function(response) {
         
         response.forEach((accidentData, i) => {
             let dateArray = accidentData.Time.split(' ');
-            let newDate = dateArray[0];
+            let day = dateArray[1];
+            let month = dateArray[2];
+            let year = dateArray[3];
+            let newDate = `${day}  ${month}  ${year}`;
             if (inputValue === newDate) {
                 // let dateInput = accidentData.filter(date => date.newDate === inputValue);
                 let row = tbody.append('tr');
