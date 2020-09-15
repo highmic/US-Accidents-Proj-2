@@ -1,4 +1,4 @@
-const data = '/api/allaccidents';
+// const data = '/api/allaccidents';
 
 d3.json(data).then ( function(response) {
     // x value
