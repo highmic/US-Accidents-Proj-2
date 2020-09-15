@@ -1,16 +1,16 @@
 from pymongo import MongoClient
-from secrets import credentials
+# from secrets import credentials
 import pymongo
 
 #define mongoatlas usee credentials from secrets 
-user = credentials.get('user')
-password = credentials.get('password')
+# user = credentials.get('user')
+# password = credentials.get('password')
 
 
 def get_db():
 
     # client = MongoClient('mongodb://localhost:27017')
-    connection = f'mongodb+srv://{user}:{password}@cluster0.7akn2.mongodb.net/us_accidents_db?retryWrites=true&w=majority'
+    connection = f'mongodb+srv://dbUser:rice2020@cluster0.7akn2.mongodb.net/us_accidents_db?retryWrites=true&w=majority'
     client = pymongo.MongoClient(connection)
     return client.us_accidents_db
 
