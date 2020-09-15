@@ -3,22 +3,8 @@ var test = "Test";
 console.log(test);
 
 
-
-
-  
-// var data = [
-//     {
-//       x: ['giraffes', 'orangutans', 'monkeys'],
-//       y: [20, 14, 23],
-//       type: 'bar'
-//     }
-//   ];
-  
-//   Plotly.newPlot('bubbleChart', data);
-
-
 function buildTrace1() {
-    d3.json("static/data/accidents2020.json").then ( function(data) {
+    d3.json("/api/allaccidents").then ( function(data) {
 
         console.log(data);
 
@@ -59,16 +45,22 @@ function buildTrace1() {
         var bubble = [bubbleTrace];
 
         var layoutBubble = {
-            title: 'Visibility Chart'
-
+            title = {
+                text: 'Visibility vs. Severity Chart'
+        }, 
+            xaxis = {
+                text: 'Severity'
+        },
+            yaxis = {
+                text: 'Visibility'
+        },
+    
         };
+
 
 
         // Plotly
         Plotly.newPlot('bubbleChart', bubble, layoutBubble);
-
-
-
 
     
     });
