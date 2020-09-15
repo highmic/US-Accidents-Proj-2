@@ -25,14 +25,15 @@ def index():
 
 @app.route('/api/info')  #all available APIs
 def available_apis():
-    return(
-        f'<h4>Available API Routes:</h4>'
-        # f'<a href="/api/allaccidents">/api/allaccidents</a><br/>'
-        f'<a href="/api/accidents" target="_blank">/api/accidents</a><br/>'
-        f'<a href="/api/accidents/4" target="_blank">/api/accidents/min_severity</a><br/>'
-        f'<a href="/api/states/TX" target="_blank">/api/states/state</a><br/>'
-        f'<a href="/api/zipcode/77071" target="_blank">/api/zipcode/zipcode</a><br/>'
-    )
+    return render_template("api_page.html")
+    # return(
+    #     f'<h4>Available API Routes:</h4>'
+    #     # f'<a href="/api/allaccidents">/api/allaccidents</a><br/>'
+    #     f'<a href="/api/accidents" target="_blank">/api/accidents</a><br/>'
+    #     f'<a href="/api/accidents/4" target="_blank">/api/accidents/min_severity</a><br/>'
+    #     f'<a href="/api/states/TX" target="_blank">/api/states/state</a><br/>'
+    #     f'<a href="/api/zipcode/77071" target="_blank">/api/zipcode/zipcode</a><br/>'
+    # )
 
 @app.route('/api/allaccidents') #not a good idea to call the all accidents api, 540K documents 
 def get_all_ccidents():
