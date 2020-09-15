@@ -24,7 +24,7 @@ def read_accidents_all():
 
 def read_accidents():
     db = get_db()
-    limit = 10  # limit the output to specified number 
+    limit = 2000  # limit the output to specified number 
     accidents = [accident for accident in db.accidents2020.
                  find({}).limit(limit)]
     return accidents
@@ -32,7 +32,7 @@ def read_accidents():
 
 def read_accidents_severity(min_severity):
     db = get_db()
-    limit = 5000
+    limit = 2000
     accidents_severity = [accident for accident in db.accidents2020.
                           find({'Severity': {'$gte': int(min_severity)}}).limit(limit)]
     return accidents_severity
@@ -40,7 +40,7 @@ def read_accidents_severity(min_severity):
 
 def read_accidents_state(state):
     db = get_db()
-    limit = 5000
+    limit = 2000
     accidents_state = [accident for accident in db.accidents2020.
                        find({'State': {'$eq': str(state)}}).limit(limit)]
     return accidents_state
@@ -48,7 +48,7 @@ def read_accidents_state(state):
 
 def read_accidents_zipcode(zipcode):
     db = get_db()
-    limit = 5000
+    limit = 2000
     accidents_zipcode = [accident for accident in db.accidents2020.
                          find({'Zipcode': {'$eq': str(zipcode)}}).limit(limit)]
     return accidents_zipcode
