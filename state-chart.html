@@ -2,12 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Dashboard</title>
+        <title>Project 2 - State Chart</title>
 
         <!-- Bringing in bootstrap stylesheet -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-        <!-- Our CSS -->
         <link rel="stylesheet" href="stylesheet.css">
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -17,12 +16,13 @@
     </head>
 
     <body>
-      <!-- d3js -->
-      <script src="https://d3js.org/d3.v6.min.js"></script>
+
+      <!-- connect to js -->
+      
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="index.html">Project 2</a>
+          <a class="navbar-brand" href="#">Project 2</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -70,79 +70,34 @@
               <!-- Dash Title -->
               <div class="container">
                 <div class="row" id='dashTitle'>
-                <div class="col-lg-12 col-lg-8 col-lg-2">Dashboard</div>    
+                <div class="col-lg-12 ml-sm-auto">Dashboard</div>    
               </div> 
 
               <!-- Container for Leaflet -->
               <div class="container">
-              <div class="row">
-                <div class="col-lg-12 col-lg-8 col-lg-2" id='leafMap'>
+                <div class="row">
+                  <div class="col-lg-12" id='leafMap'>
+                    <img class="mw-100" src="1_SnzxlADjKy_jrx967N2Isw.png">
+                  </div>    
+                </div> 
+  
+              </div>
+  
+              <!-- Landing page chart -->
+              <div class="container">
+                <div class="row">
+                  <div class= "col-lg-12">
                   <img class="mw-100" src="1_SnzxlADjKy_jrx967N2Isw.png">
-                </div>    
-              </div> 
-
-            </div>
-
-            <!-- Landing page chart -->
-            <div class="container">
-              <div class="row margin-top-50">
-                <div class="col-md-2">
-                  <aside class="filters">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">Filter Search</div>
-                      <div class="panel-body">
-                        <form id="form">
-                          <div class="form-group">
-                            <ul class="list-group" id="filters">
-                              <li class="filter list-group-item">
-                                <label for="date">Enter a Date</label>
-                                <input class="form-control" id="datetime" type="text" placeholder="2020-01-01">
-                              </li>
-                            </ul>
-                          </div>
-                          <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
-                          <button id="filter-btn-2" type="button" class="btn btn-default">Refresh Table</button>
-                        </form>
-                      </div>
-                    </div>
-                  </aside>
-                </div>
-                <div class="col-md-10">
-                  <div id="table-area" class="">
-                    <table id="ufo-table" class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th class="table-head">ID</th>
-                          <th class="table-head">Severity</th>
-                          <th class="table-head">Date</th>
-                          <th class="table-head">Latitude</th>
-                          <th class="table-head">Longitude</th>
-                          <th class="table-head">Description</th>
-                          <th class="table-head">Street</th>
-                          <th class="table-head">City</th>
-                          <th class="table-head">State</th>
-                          <th class="table-head">Zipcode</th>
-                          <th class="table-head">Timezone</th>
-                          <th class="table-head">Temperature(F)</th>
-                          <th class="table-head">Visibility(mi)</th>
-                          <th class="table-head">Weather Condition</th>
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
-                  </div>
                 </div>
               </div>
+
+    
+      
+                </div>
             </div>
         </div> 
-    
-    <!-- connect to js -->
-    <script src="static/js/bubble_app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
         
-    <!-- Our raw data -->
-    <!-- NOTE: Remove once connected with Heroku -->
-    <!-- <script> src='static/data/accidents2020.json'</script> -->
+
     
       
     </body>
