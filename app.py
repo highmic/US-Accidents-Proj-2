@@ -10,8 +10,18 @@ app = Flask(__name__)
 
 @app.route('/')  ##route to render index.html in heroku
 def index():
-    return "<h3>Welcome to Team 8 Project 2 Server!!</h3>"
+    # return "<h3>Welcome to Team 8 Project 2 Server!!</h3>"
     # return render_template("index.html")
+    return(
+        f'<h3>Welcome to Team 8 Project 2 Server!!</h3><br/>'
+        f'<h4>Available API Routes:</h4><br/>'
+        f'<a href="/allaccidents">/allaccidents</a><br/>'
+        f'<a href="/accidents" target="_blank">/accidents</a><br/>'
+        f'<a href="/accidents/4" target="_blank">/accidents/min_severity</a><br/>'
+        f'<a href="/states/TX" target="_blank">/states/state</a><br/>'
+        f'<a href="/zipcode/77071" target="_blank">/zipcode/zipcode</a><br/>'
+    
+    )
 
 @app.route('/api/info')  #all available APIs
 def available_apis():
