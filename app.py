@@ -34,6 +34,9 @@ def available_apis():
     #     f'<a href="/api/states/TX" target="_blank">/api/states/state</a><br/>'
     #     f'<a href="/api/zipcode/77071" target="_blank">/api/zipcode/zipcode</a><br/>'
     # )
+@app.route('/api/bar')
+def get_barchart():
+    return render_template("state-chart.html")
 
 @app.route('/api/allaccidents') #not a good idea to call the all accidents api, 540K documents 
 def get_all_ccidents():
