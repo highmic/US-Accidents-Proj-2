@@ -1,1 +1,1 @@
-web: gunicorn us-accidents-proj-2.app:app
+web: gunicorn app:app
