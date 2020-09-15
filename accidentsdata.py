@@ -18,7 +18,7 @@ def get_db():
 def read_accidents_all():
     db = get_db()
     # for map and plots only
-    limit = 10000
+    limit = 25000
     accidents = [accident for accident in db.accidents2020.find({}).limit(limit)]
     return accidents
 
