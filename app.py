@@ -15,11 +15,11 @@ def index():
     return(
         f'<h3>Welcome to Team 8 Project 2 Server!!</h3><br/>'
         f'<h4>Available API Routes:</h4><br/>'
-        f'<a href="/allaccidents">/allaccidents</a><br/>'
-        f'<a href="/accidents" target="_blank">/accidents</a><br/>'
-        f'<a href="/accidents/4" target="_blank">/accidents/min_severity</a><br/>'
-        f'<a href="/states/TX" target="_blank">/states/state</a><br/>'
-        f'<a href="/zipcode/77071" target="_blank">/zipcode/zipcode</a><br/>'
+        # f'<a href="/api/allaccidents" target="_blank">/api/allaccidents</a><br/>'
+        f'<a href="/api/accidents" target="_blank">/api/accidents</a><br/>'
+        f'<a href="/api/accidents/4" target="_blank">/api/accidents/min_severity</a><br/>'
+        f'<a href="/api/states/TX" target="_blank">/api/states/state</a><br/>'
+        f'<a href="/api/zipcode/77071" target="_blank">/api/zipcode/zipcode</a><br/>'
     
     )
 
@@ -27,37 +27,37 @@ def index():
 def available_apis():
     return(
         f'<h4>Available API Routes:</h4>'
-        f'<a href="/allaccidents">/allaccidents</a><br/>'
-        f'<a href="/accidents" target="_blank">/accidents</a><br/>'
-        f'<a href="/accidents/4" target="_blank">/accidents/min_severity</a><br/>'
-        f'<a href="/states/TX" target="_blank">/states/state</a><br/>'
-        f'<a href="/zipcode/77071" target="_blank">/zipcode/zipcode</a><br/>'
+        # f'<a href="/api/allaccidents">/api/allaccidents</a><br/>'
+        f'<a href="/api/accidents" target="_blank">/api/accidents</a><br/>'
+        f'<a href="/api/accidents/4" target="_blank">/api/accidents/min_severity</a><br/>'
+        f'<a href="/api/states/TX" target="_blank">/api/states/state</a><br/>'
+        f'<a href="/api/zipcode/77071" target="_blank">/api/zipcode/zipcode</a><br/>'
     )
 
-@app.route('/allaccidents') #not a good idea to call the all accidents api, 540K documents 
+@app.route('/api/allaccidents') #not a good idea to call the all accidents api, 540K documents 
 def get_all_ccidents():
     accidents = read_accidents_all()
     return jsonify(accidents)
 
-@app.route('/accidents') # return all accidents, but limited to 5000k documents 
+@app.route('/api/accidents') # return all accidents, but limited to 5000k documents 
 def get_accidents():
     accidents = read_accidents()
     return jsonify(accidents)
 
 
-@app.route('/accidents/<min_severity>') #return accidents severity on a scale of 1-4
+@app.route('/api/accidents/<min_severity>') #return accidents severity on a scale of 1-4
 def get_accidents_severity(min_severity):
     accidents = read_accidents_severity(min_severity)
     return jsonify(accidents)
 
 
-@app.route('/states/<state>') #filter to specific state 
+@app.route('/api/states/<state>') #filter to specific state 
 def get_accidents_state(state):
     accidents = read_accidents_state(state)
     return jsonify(accidents)
 
 
-@app.route('/zipcode/<zipcode>') #filter to specific zipcode 
+@app.route('/api/zipcode/<zipcode>') #filter to specific zipcode 
 def get_accidents_zipcode(zipcode):
     accidents = read_accidents_zipcode(zipcode)
     return jsonify(accidents)
