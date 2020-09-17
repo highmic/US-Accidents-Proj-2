@@ -1,5 +1,5 @@
 # import dependencies
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, redirect, request
 from accidentsdata import read_accidents, read_accidents_severity,\
 read_accidents_severity,read_accidents_state, read_accidents_zipcode,read_accidents_all
 
@@ -12,31 +12,27 @@ app = Flask(__name__)
 def index():
     # return "<h3>Welcome to Team 8 Project 2 Server!!</h3>"
     return render_template("index.html")
-    # return(
-    #     f'<h3>Welcome to Team 8 Project 2 Server!!</h3><br/>'
-    #     f'<h4>Available API Routes:</h4><br/>'
-    #     # f'<a href="/api/allaccidents" target="_blank">/api/allaccidents</a><br/>'
-    #     f'<a href="/api/accidents" target="_blank">/api/accidents</a><br/>'
-    #     f'<a href="/api/accidents/4" target="_blank">/api/accidents/min_severity</a><br/>'
-    #     f'<a href="/api/states/TX" target="_blank">/api/states/state</a><br/>'
-    #     f'<a href="/api/zipcode/77071" target="_blank">/api/zipcode/zipcode</a><br/>'
-    
-    # )
+ 
 
 @app.route('/api/info')  #all available APIs
 def available_apis():
     return render_template("api_page.html")
-    # return(
-    #     f'<h4>Available API Routes:</h4>'
-    #     # f'<a href="/api/allaccidents">/api/allaccidents</a><br/>'
-    #     f'<a href="/api/accidents" target="_blank">/api/accidents</a><br/>'
-    #     f'<a href="/api/accidents/4" target="_blank">/api/accidents/min_severity</a><br/>'
-    #     f'<a href="/api/states/TX" target="_blank">/api/states/state</a><br/>'
-    #     f'<a href="/api/zipcode/77071" target="_blank">/api/zipcode/zipcode</a><br/>'
-    # )
-@app.route('/api/bar')
+ 
+@app.route('/barchart')
 def get_barchart():
-    return render_template("state-chart.html")
+    # if request.method == "POST":
+    #     return redirect("/", code=302)
+    # return redirect("state-chart.html")
+    # return redirect("/state-chart.html")
+    return render_template("bar.html")
+
+@app.route('/piechart')
+def get_pie():
+    return render_template("pie.html")
+
+@app.route('/data')
+def get_data():
+    return render_template("table.html")
 
 @app.route('/api/allaccidents') #not a good idea to call the all accidents api, 540K documents 
 def get_all_ccidents():

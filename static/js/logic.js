@@ -4,7 +4,7 @@ const streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{
   tileSize: 512,
   maxZoom: 18,
   zoomOffset: -1,
-  id: "mapbox/streets-v11",
+  id: "mapbox/light-v10",
   accessToken: API_KEY
 });
 
@@ -19,7 +19,7 @@ const layers = {
 // Creating map object with our layers
 const myMap = L.map("map", {
   center: [31.96, -99.90],
-  zoom: 6,
+  zoom: 6, 
   layers: [
     layers.SEVERITY_FOUR,
     layers.SEVERITY_THREE,
@@ -42,49 +42,7 @@ const overlays = {
 L.control.layers(null, overlays).addTo(myMap);
 
 const legend = L.control({position: 'bottomright'});
-// // Create Legend
-// const legend = L.control({
-//   position: "bottomright"
-// });
 
-// // After layer control is added, insert div element with class "legend"
-// info.onAdd = function() {
-//   const div = L.DomUtil.create("div", "legend");
-//   return div;
-// };
-
-// info.addTo(myMap);
-
-// let accidentIcon = { 
-//   SEVERITY_FOUR: L.ExtraMarkers.icon({
-//     icon: 'fa-car',
-//     iconColor: 'white',
-//     markerColor: 'red',
-//     shape: 'circle',
-//     prefix: 'fa'
-//   }),
-//   SEVERITY_THREE: L.ExtraMarkers.icon({
-//     icon: 'fa-car',
-//     iconColor: 'white',
-//     markerColor: 'orange',
-//     shape: 'circle',
-//     prefix: 'fa'
-//   }),
-//   SEVERITY_TWO: L.ExtraMarkers.icon({
-//     icon: 'fa-car',
-//     iconColor: 'white',
-//     markerColor: 'yellow',
-//     shape: 'circle',
-//     prefix: 'fa'
-//   }),
-//   SEVERITY_ONE: L.ExtraMarkers.icon({
-//     icon: 'fa-car',
-//     iconColor: 'white',
-//     markerColor: 'green',
-//     shape: 'circle',
-//     prefix: 'fa'
-//   })
-// }
 
 const data = '/api/allaccidents'
 
@@ -174,29 +132,3 @@ d3.json(data).then( function(response) {
   
 });
 
-// function userDate (date) {
-//   const dateArray1 = feature.Time.$date.split('T');
-//   let dateValue = dateArray1[0];
-//   if (dateValue === '2020-05-24') {
-    
-//   }
-
-// };
-
-// const myStyle = {
-//   "color": "blue",
-//   "weight": 2, //stroke thickness of lines
-//   "opacity": 0.65
-// };
-
-// // read nyc.geojson
-// d3.json('static/data/nyc.geojson').then(
-//   jsonData => {
-//       // console.log(jsonData);
-//       L.geoJSON(jsonData.features, 
-//           {
-//               style: myStyle
-//           }
-//       ).addTo(myMap);
-//   }
-// );
