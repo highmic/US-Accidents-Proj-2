@@ -3,7 +3,7 @@ var test = "Test";
 console.log(test);
 
 // from data
-const tableData = "../static/data/tx_19_20_data.json";
+const tableData = "/api/allaccidents";
 
 d3.json(tableData).then( function(response) {
 
@@ -18,8 +18,23 @@ d3.json(tableData).then( function(response) {
         // console.log(accidentData);
         // Display key and value
         let dateArray = accidentData.Time.split(' ');
-        let newDate = dateArray[0];
-        if (newDate === '2020-06-24') {
+        function formatDate(d) {
+            const date = new Date(d)
+            var dd = date.getDate(); 
+            var mm = date.getMonth()+1;
+            var yyyy = date.getFullYear(); 
+            if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            };
+            return d = dd+'/'+mm+'/'+yyyy
+        };
+        const newDate = formatDate(accidentData.Time);
+        console.log(newDate);
+
+        if (newDate === '15/05/2020') {
             Object.entries(accidentData).forEach( ([key,value]) => {
                 // console.log(`ID ${i}, Key: ${key}, Value: ${value}`);
                 // Append data into accident-table
@@ -52,7 +67,10 @@ d3.json(tableData).then( function(response) {
         
         response.forEach((accidentData, i) => {
             let dateArray = accidentData.Time.split(' ');
-            let newDate = dateArray[0];
+            let day = dateArray[1];
+            let month = dateArray[2];
+            let year = dateArray[3];
+            let newDate = `${day}  ${month}  ${year}`;
             if (inputValue === newDate) {
                 // let dateInput = accidentData.filter(date => date.newDate === inputValue);
                 let row = tbody.append('tr');
